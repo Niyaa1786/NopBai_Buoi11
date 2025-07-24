@@ -1,0 +1,208 @@
+﻿@model Buoi11_TranMinhThanh_ThiThu.Models.Course
+
+@{
+    ViewData["Title"] = "Chi Tiết Khóa Học";
+}
+
+<style>
+    /* CSS cho trang Details - Tích hợp trực tiếp */
+
+    /* Tiêu đề trang */
+    .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+        font-weight: 700;
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #007bff; /* Màu xanh nổi bật */
+            border-radius: 2px;
+        }
+
+    /* Container cho Chi tiết - Tương tự card */
+    .details-container {
+        background-color: #ffffff; /* Nền trắng */
+        border-radius: 15px; /* Bo góc lớn */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm mại và sâu */
+        padding: 40px; /* Tăng padding */
+        margin-top: 30px; /* Khoảng cách với tiêu đề */
+        margin-bottom: 30px;
+    }
+
+    /* Tiêu đề nhỏ trong details (Course) */
+    .details-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .details-grid dt {
+        font-weight: 600;
+        color: #666;
+        padding: 10px 0;
+        border-bottom: 1px dashed #eee; /* Đường gạch đứt nhẹ */
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa icon và text */
+    }
+
+    .details-grid dd {
+        padding: 10px 0;
+        color: #333;
+        margin-bottom: 5px;
+        font-weight: 500;
+        text-align: right; /* Căn phải giá trị */
+    }
+
+    /* Đảm bảo đường kẻ ngang bao phủ toàn bộ chiều rộng */
+    .details-grid .row > dt, .details-grid .row > dd {
+        border-bottom: 1px dashed #eee;
+    }
+
+    .details-grid .row:last-child > dt, .details-grid .row:last-child > dd {
+        border-bottom: none; /* Bỏ đường kẻ cuối cùng */
+    }
+
+
+    /* Icons cho các trường thông tin */
+    .details-grid .fa-tag {
+        color: #007bff;
+    }
+    /* Title */
+    .details-grid .fa-align-left {
+        color: #6f42c1;
+    }
+    /* Description */
+    .details-grid .fa-hourglass-half {
+        color: #fd7e14;
+    }
+    /* Duration */
+    .details-grid .fa-dollar-sign {
+        color: #28a745;
+    }
+    /* Fee */
+
+
+    /* Nút Actions */
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end; /* Căn phải */
+        gap: 15px; /* Khoảng cách giữa các nút */
+        margin-top: 30px;
+    }
+
+    .btn-edit-details {
+        background: linear-gradient(45deg, #007bff 0%, #0056b3 100%); /* Gradient xanh dương */
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+        .btn-edit-details:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 123, 255, 0.45);
+            color: white;
+        }
+
+        .btn-edit-details i {
+            font-size: 1.1rem;
+        }
+
+    .btn-back-details {
+        background-color: #6c757d; /* Màu xám */
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(108, 117, 125, 0.2);
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+        .btn-back-details:hover {
+            background-color: #545b62; /* Màu xám đậm hơn */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+            color: white;
+        }
+
+        .btn-back-details i {
+            font-size: 1rem;
+        }
+</style>
+
+<div class="d-flex justify-content-center align-items-center mb-5">
+    <h1 class="page-header">Chi Tiết Khóa Học</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        @* Giảm chiều rộng cột để form trông cân đối hơn *@
+        <div class="details-container">
+            <h4 class="details-title">Thông Tin Chi Tiết</h4>
+            <hr />
+            <dl class="row details-grid">
+                <dt class="col-sm-4">
+                    <i class="fas fa-tag"></i> @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+                <dt class="col-sm-4">
+                    <i class="fas fa-align-left"></i> @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt class="col-sm-4">
+                    <i class="fas fa-hourglass-half"></i> @Html.DisplayNameFor(model => model.Duration)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Duration) Tuần
+                </dd>
+
+                <dt class="col-sm-4">
+                    <i class="fas fa-dollar-sign"></i> @Html.DisplayNameFor(model => model.Fee)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Fee)
+                </dd>
+            </dl>
+            <div class="action-buttons">
+                <a asp-action="Edit" asp-route-id="@Model?.CourseId" class="btn btn-edit-details">
+                    <i class="fas fa-edit"></i> Sửa
+                </a>
+                <a asp-action="Index" class="btn btn-back-details">
+                    <i class="fas fa-arrow-left"></i> Quay Lại Danh Sách
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

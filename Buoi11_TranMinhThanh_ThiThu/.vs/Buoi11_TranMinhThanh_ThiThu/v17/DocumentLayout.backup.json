@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\courses\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\courses\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\courses\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\courses\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\courses\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\courses\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\views\\courses\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\views\\courses\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|d:\\archives\\asp.net\\buoi11_tranminhthanh_thithu\\buoi11_tranminhthanh_thithu\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1269152-994A-4B78-B500-E0BF7431D6E8}|Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu.csproj|solutionrelative:buoi11_tranminhthanh_thithu\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Delete.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Delete.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Delete.cshtml",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAYwN4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T02:38:16.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Create.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Create.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Create.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Create.cshtml",
+              "ViewState": "AgIAALcAAAAAAAAAAAAYwMYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T02:38:11.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Details.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Details.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Details.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Details.cshtml",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAYwM8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T02:38:01.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Edit.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Edit.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Edit.cshtml",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAwwMcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T02:35:01.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Index.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Index.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Index.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Courses\\Index.cshtml",
+              "ViewState": "AgIAADYBAAAAAAAAAAAgwEIBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T02:28:29.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Controllers\\CoursesController.cs",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Controllers\\CoursesController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwDYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T02:28:12.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAhwMYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-24T01:49:42.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Program.cs",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Program.cs",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Program.cs",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:28:14.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\appsettings.json",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\appsettings.json",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\appsettings.json",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-24T01:27:53.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Models\\Course.cs",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Models\\Course.cs",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:25:17.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Buoi11_TranMinhThanh_ThiThu\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Archives\\ASP.NET\\Buoi11_TranMinhThanh_ThiThu\\Buoi11_TranMinhThanh_ThiThu\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Buoi11_TranMinhThanh_ThiThu\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-24T01:18:55.772Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

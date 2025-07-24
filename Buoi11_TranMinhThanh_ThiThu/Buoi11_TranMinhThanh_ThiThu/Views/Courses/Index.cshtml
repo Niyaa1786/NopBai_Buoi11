@@ -1,0 +1,408 @@
+﻿@model IEnumerable<Buoi11_TranMinhThanh_ThiThu.Models.Course>
+
+@{
+    ViewData["Title"] = "Danh Sách Khóa Học"; // Thay đổi tiêu đề rõ ràng hơn
+                                              // Lấy giá trị bộ lọc hiện tại từ ViewData để giữ lại trạng thái của form
+    var currentSearch = ViewData["CurrentSearch"] as string;
+    var currentMinFee = ViewData["CurrentMinFee"] as decimal?;
+    var currentMaxFee = ViewData["CurrentMaxFee"] as decimal?;
+}
+
+<style>
+    /* CSS cho trang Index - Tích hợp trực tiếp */
+
+    /* Tiêu đề trang */
+    .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+        font-weight: 700;
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #007bff; /* Màu xanh nổi bật */
+            border-radius: 2px;
+        }
+
+    /* Search and Filter Form Styles */
+    .filter-form-container {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 25px;
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically on small screens */
+        gap: 15px; /* Space between filter groups */
+    }
+
+    .filter-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap; /* Cho phép các mục xuống dòng trên màn hình nhỏ */
+    }
+
+        .filter-group .form-control {
+            border-radius: 8px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s ease-in-out;
+            flex-grow: 1; /* Cho phép input mở rộng */
+            min-width: 120px; /* Đảm bảo input không quá nhỏ */
+        }
+
+            .filter-group .form-control:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+            }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #555;
+            white-space: nowrap; /* Ngăn label xuống dòng */
+        }
+
+    .filter-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end; /* Căn các nút sang phải */
+        flex-wrap: wrap; /* Cho phép các nút xuống dòng */
+    }
+
+    .btn-filter, .btn-clear-filter {
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+    }
+
+    .btn-filter {
+        background: linear-gradient(45deg, #007bff 0%, #0056b3 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+    }
+
+        .btn-filter:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+            color: white;
+        }
+
+    .btn-clear-filter {
+        background-color: #ffc107; /* Warning yellow */
+        color: #333;
+        border: none;
+        box-shadow: 0 3px 8px rgba(255, 193, 7, 0.3);
+    }
+
+        .btn-clear-filter:hover {
+            background-color: #e0a800; /* Darker yellow */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+            color: #333;
+        }
+
+
+    /* Nút Tạo Mới */
+    .btn-create-new {
+        background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%); /* Gradient màu tím-xanh */
+        border: none;
+        color: white;
+        padding: 12px 30px; /* Tăng padding để nút lớn hơn */
+        border-radius: 50px; /* Bo tròn hoàn toàn */
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Bóng đổ nhẹ nhàng */
+        transition: all 0.3s ease-in-out; /* Hiệu ứng chuyển động mượt mà */
+        display: inline-flex; /* Để căn chỉnh icon và text */
+        align-items: center;
+        gap: 8px; /* Khoảng cách giữa icon và text */
+        text-decoration: none; /* Bỏ gạch chân cho link */
+    }
+
+        .btn-create-new:hover {
+            transform: translateY(-3px); /* Nhấc nút lên khi hover */
+            box-shadow: 0 8px 18px rgba(0, 123, 255, 0.45); /* Bóng đổ rõ hơn khi hover */
+            color: white; /* Đảm bảo màu chữ vẫn trắng khi hover */
+        }
+
+        .btn-create-new i {
+            font-size: 1.1rem; /* Kích thước icon */
+        }
+
+    /* Course Card Styles - Thẻ hiển thị khóa học */
+    .course-card {
+        background-color: #ffffff; /* Nền trắng */
+        border-radius: 15px; /* Bo góc lớn */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm mại và sâu */
+        padding: 25px;
+        margin-bottom: 30px; /* Khoảng cách giữa các thẻ */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animation khi hover */
+        display: flex; /* Dùng flexbox để bố cục nội dung bên trong */
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        height: 100%; /* Đảm bảo tất cả các thẻ trong một hàng có chiều cao bằng nhau */
+    }
+
+        .course-card:hover {
+            transform: translateY(-8px); /* Nhấc thẻ lên khi hover */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Bóng đổ rõ hơn khi hover */
+        }
+
+    .course-card-header {
+        display: flex;
+        justify-content: space-between; /* Đẩy tiêu đề và icon ra hai phía */
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee; /* Đường kẻ dưới đầu thẻ */
+        padding-bottom: 15px;
+    }
+
+    .course-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333; /* Màu chữ tiêu đề */
+        margin-bottom: 0;
+    }
+
+    .course-icon {
+        font-size: 2.5rem; /* Kích thước icon lớn */
+        color: #007bff; /* Màu xanh nổi bật */
+    }
+
+    .course-description {
+        font-size: 1rem;
+        color: #555; /* Màu chữ mô tả */
+        line-height: 1.6; /* Chiều cao dòng để dễ đọc */
+        margin-bottom: 20px;
+        flex-grow: 1; /* Để mô tả chiếm không gian còn lại, giúp các thẻ có chiều cao đồng đều */
+    }
+
+    .course-meta {
+        display: flex;
+        justify-content: space-between; /* Đẩy duration và fee ra hai phía */
+        align-items: center;
+        margin-top: auto; /* Đẩy phần này xuống cuối thẻ */
+        padding-top: 15px;
+        border-top: 1px solid #eee; /* Đường kẻ trên phần meta */
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        color: #777;
+        font-size: 0.95rem;
+        font-weight: 500;
+    }
+
+        .meta-item i {
+            margin-right: 8px; /* Khoảng cách giữa icon và text */
+        }
+
+        .meta-item .fa-clock { /* Icon đồng hồ cho Duration */
+            color: #28a745; /* Màu xanh lá cây */
+        }
+
+        .meta-item .fa-dollar-sign { /* Icon tiền cho Fee */
+            color: #ffc107; /* Màu vàng */
+        }
+
+    .course-actions {
+        margin-top: 20px; /* Khoảng cách với phần meta */
+        display: flex;
+        justify-content: flex-end; /* Căn các nút hành động về bên phải */
+        gap: 10px; /* Khoảng cách giữa các nút */
+    }
+
+    .btn-action {
+        padding: 8px 18px;
+        border-radius: 30px; /* Bo tròn các nút action */
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none; /* Bỏ gạch chân cho link */
+        display: inline-flex; /* Để căn chỉnh icon và text */
+        align-items: center;
+        gap: 5px; /* Khoảng cách giữa icon và text trong nút */
+    }
+
+    .btn-edit {
+        background-color: #007bff; /* Màu xanh dương */
+        color: white;
+    }
+
+        .btn-edit:hover {
+            background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
+            color: white;
+        }
+
+    .btn-details {
+        background-color: #6c757d; /* Màu xám */
+        color: white;
+    }
+
+        .btn-details:hover {
+            background-color: #545b62; /* Màu xám đậm hơn khi hover */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(108, 117, 125, 0.3);
+            color: white;
+        }
+
+    .btn-delete {
+        background-color: #dc3545; /* Màu đỏ */
+        color: white;
+    }
+
+        .btn-delete:hover {
+            background-color: #bd2130; /* Màu đỏ đậm hơn khi hover */
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(220, 53, 69, 0.3);
+            color: white;
+        }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .page-header {
+            font-size: 2rem;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+        }
+
+        .course-icon {
+            font-size: 2rem;
+        }
+
+        .course-meta {
+            flex-direction: column; /* Trên mobile, meta info xếp chồng lên nhau */
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .course-actions {
+            justify-content: center; /* Căn giữa các nút hành động trên mobile */
+            flex-wrap: wrap; /* Cho phép các nút xuống dòng nếu không đủ chỗ */
+        }
+
+        .filter-group {
+            flex-direction: column; /* Stack filter items vertically */
+            align-items: flex-start;
+        }
+
+            .filter-group input {
+                width: 100%; /* Full width for inputs */
+            }
+
+        .filter-buttons {
+            justify-content: center;
+        }
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center mb-5">
+    <h1 class="page-header">Quản Lý Khóa Học</h1>
+</div>
+
+<div class="filter-form-container">
+    <form asp-controller="Courses" asp-action="Index" method="get" class="d-flex flex-column gap-3">
+        <div class="filter-group">
+            <label for="searchString">Tìm theo tên:</label>
+            <input type="text" name="searchString" class="form-control" value="@currentSearch" placeholder="Nhập tên hoặc mô tả khóa học..." />
+        </div>
+        <div class="filter-group">
+            <label for="minFee">Phí từ:</label>
+            <input type="number" name="minFee" class="form-control" value="@currentMinFee" placeholder="Tối thiểu" min="0" />
+            <label for="maxFee">đến:</label>
+            <input type="number" name="maxFee" class="form-control" value="@currentMaxFee" placeholder="Tối đa" min="0" />
+        </div>
+        <div class="filter-buttons">
+            <button type="submit" class="btn btn-filter">
+                <i class="fas fa-filter"></i> Lọc & Tìm Kiếm
+            </button>
+            <a asp-action="Index" class="btn btn-clear-filter">
+                <i class="fas fa-undo"></i> Xóa Lọc
+            </a>
+        </div>
+    </form>
+</div>
+
+<div class="text-start mb-4">
+    <a asp-action="Create" class="btn btn-create-new">
+        <i class="fas fa-plus-circle"></i> Tạo Khóa Học Mới
+    </a>
+</div>
+
+<div class="row">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-md-6 col-lg-4">
+                @* Bootstrap Grid: 2 cột trên tablet (md), 3 cột trên desktop (lg), 1 cột trên mobile (mặc định) *@
+                <div class="course-card">
+                    <div class="course-card-header">
+                        <h3 class="course-title">@Html.DisplayFor(modelItem => item.Title)</h3>
+                        @* Bạn có thể thay đổi icon dựa trên loại khóa học nếu có trường dữ liệu tương ứng *@
+                        <i class="fas fa-book course-icon"></i>
+                    </div>
+                    <p class="course-description">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    <div class="course-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i> @Html.DisplayFor(modelItem => item.Duration) Tuần
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-dollar-sign"></i> @Html.DisplayFor(modelItem => item.Fee)
+                        </span>
+                    </div>
+                    <div class="course-actions">
+                        <a asp-action="Edit" asp-route-id="@item.CourseId" class="btn btn-action btn-edit">
+                            <i class="fas fa-edit me-1"></i> Sửa
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.CourseId" class="btn btn-action btn-details">
+                            <i class="fas fa-info-circle me-1"></i> Chi Tiết
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.CourseId" class="btn btn-action btn-delete">
+                            <i class="fas fa-trash-alt me-1"></i> Xóa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12 text-center py-5">
+            <p class="lead text-muted">Không tìm thấy khóa học nào phù hợp với điều kiện lọc/tìm kiếm của bạn.</p>
+            <i class="fas fa-search-minus fa-3x text-secondary opacity-50 mt-3"></i>
+            <div class="mt-4">
+                <a asp-action="Create" class="btn btn-create-new">
+                    <i class="fas fa-plus-circle"></i> Bắt Đầu Tạo Khóa Học
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

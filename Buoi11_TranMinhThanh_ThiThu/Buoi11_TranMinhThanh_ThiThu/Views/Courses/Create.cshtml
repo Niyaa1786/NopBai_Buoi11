@@ -1,0 +1,199 @@
+﻿@model Buoi11_TranMinhThanh_ThiThu.Models.Course
+
+@{
+    ViewData["Title"] = "Tạo Khóa Học Mới";
+}
+
+<style>
+    /* CSS cho trang Create (tái sử dụng từ Edit để nhất quán) - Tích hợp trực tiếp */
+
+    /* Tiêu đề trang */
+    .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+        font-weight: 700;
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #007bff; /* Màu xanh nổi bật */
+            border-radius: 2px;
+        }
+
+    /* Container cho Form - Tương tự card */
+    .form-container {
+        background-color: #ffffff; /* Nền trắng */
+        border-radius: 15px; /* Bo góc lớn */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Bóng đổ mềm mại và sâu */
+        padding: 40px; /* Tăng padding */
+        margin-top: 30px; /* Khoảng cách với tiêu đề */
+        margin-bottom: 30px;
+    }
+
+    /* Tiêu đề nhỏ trong form (Course) */
+    .form-title {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    /* Các nhóm form-group */
+    .form-group {
+        margin-bottom: 20px; /* Khoảng cách giữa các trường input */
+    }
+
+    .control-label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px; /* Khoảng cách giữa label và input */
+        display: block; /* Đảm bảo label chiếm dòng riêng */
+    }
+
+    .form-control {
+        border-radius: 8px; /* Bo tròn input */
+        padding: 12px 15px; /* Tăng padding input */
+        border: 1px solid #ddd;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Bóng đổ nhẹ bên trong input */
+        transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+        .form-control:focus {
+            border-color: #007bff; /* Màu viền khi focus */
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Glow khi focus */
+            outline: none;
+        }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+        display: block; /* Đảm bảo lỗi hiển thị trên dòng riêng */
+    }
+
+    /* Nút Create (thay cho Save) */
+    .btn-create-form { /* Đổi tên class để phân biệt với nút tạo mới ở Index */
+        background: linear-gradient(45deg, #28a745 0%, #218838 100%); /* Gradient màu xanh lá */
+        border: none;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        margin-top: 20px; /* Khoảng cách với form */
+    }
+
+        .btn-create-form:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(40, 167, 69, 0.45);
+            color: white; /* Đảm bảo màu chữ vẫn trắng */
+        }
+
+        .btn-create-form i {
+            font-size: 1.1rem;
+        }
+
+    /* Nút Back to List */
+    .btn-back-form { /* Đổi tên class để phân biệt */
+        background-color: #6c757d; /* Màu xám */
+        color: white;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+        box-shadow: 0 2px 5px rgba(108, 117, 125, 0.2);
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        margin-left: 15px; /* Khoảng cách với nút Create */
+        margin-top: 20px;
+    }
+
+        .btn-back-form:hover {
+            background-color: #545b62; /* Màu xám đậm hơn */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+            color: white;
+        }
+
+        .btn-back-form i {
+            font-size: 1rem;
+        }
+
+    /* Nút Submit và Back nằm trên cùng một dòng, căn chỉnh */
+    .form-buttons {
+        display: flex;
+        justify-content: flex-end; /* Căn phải */
+        gap: 15px; /* Khoảng cách giữa các nút */
+        margin-top: 30px;
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center mb-5">
+    <h1 class="page-header">Tạo Khóa Học Mới</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        @* Giảm chiều rộng cột để form trông cân đối hơn *@
+        <div class="form-container">
+            <h4 class="form-title">Điền Thông Tin Khóa Học</h4>
+            <hr />
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Duration" class="control-label"></label>
+                    <input asp-for="Duration" class="form-control" />
+                    <span asp-validation-for="Duration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Fee" class="control-label"></label>
+                    <input asp-for="Fee" class="form-control" />
+                    <span asp-validation-for="Fee" class="text-danger"></span>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-create-form">
+                        <i class="fas fa-plus-circle"></i> Tạo Mới
+                    </button>
+                    <a asp-action="Index" class="btn btn-back-form">
+                        <i class="fas fa-arrow-left"></i> Quay Lại Danh Sách
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
